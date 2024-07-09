@@ -15,12 +15,16 @@ public class Laser : MonoBehaviour
     void Update()
     {
         CalculateMovement();
+        DetectCollision();
     }
 
     void CalculateMovement()
     {
         transform.Translate(Vector3.up * _speed * Time.deltaTime);
+    }
 
+    void DetectCollision()
+    {
         if (transform.position.y > 8)
         {
             Destroy(gameObject);
